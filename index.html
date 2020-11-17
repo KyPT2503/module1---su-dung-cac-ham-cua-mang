@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<!--reverse-->
+<input type="text" id="textReverse" onchange="reverse()">
+<p id="reserve_output"></p>
+<script>
+    function myConcat()
+    {
+        let myColor = ["Red", "Green", "White", "Black"];
+        let strmyColor=myColor[0];
+        for(let i=1;i<4;i++)
+            strmyColor=strmyColor.concat(','+myColor[i]);
+        console.log(strmyColor);
+    }
+    let str='23456820';
+    function insert()
+    {
+        let newStr='';
+        for(let i=0;i<str.length-1;i++)
+        {
+            if(+str[i]%2==0 && +str[i+1]%2==0)
+            {
+                newStr+=str[i]+'-';
+            }
+            else
+            {
+                newStr+=str[i];
+            }
+        }
+        newStr+=str[str.length-1];
+        console.log(newStr);
+    }
+
+    /*reserve text*/
+    function reverse()
+    {
+        let str=document.getElementById('textReverse').value;
+        let string='';
+        for(let i=0;i<str.length;i++)
+        {
+            if(str[i]==str[i].toUpperCase())
+            {
+                string+=str[i].toLowerCase();
+            }
+            else
+            {
+                string+=str[i].toUpperCase();
+            }
+
+        }
+        document.getElementById('reserve_output').innerHTML=string;
+    }
+</script>
+</body>
+</html>
